@@ -1,0 +1,334 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0e17 0%, #0f172a 50%, #0a0e17 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =================================
+   1. Main About Section
+================================= */
+.aboutSection {
+  padding: 80px 0 40px;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* Profile Card (Left Side Dedicated Image) */
+.profileCard {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 24px;
+  overflow: hidden;
+  height: 60%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profileAvatarFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
+  font-size: 64px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* About Text Section (Right Side) */
+.contentSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.aboutHeader {
+  margin-bottom: 8px;
+}
+
+.aboutLabel {
+  font-size: 30px;
+  font-weight: 600;
+  color: #8b5cf6;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+}
+
+.aboutTitle {
+  font-size: 65px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -1px;
+  position: relative;
+}
+
+.titleAccent {
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+  margin-top: 16px;
+  border-radius: 2px;
+}
+
+.aboutDescription {
+  font-size: 25px;
+  color: #94a3b8;
+  line-height: 1.8;
+  margin: 0;
+  text-align: justify;
+  white-space: pre-wrap;
+  
+}
+
+/* =================================
+   2. Dynamic Horizontal Contact Row
+================================= */
+.contactCardsSection {
+  padding: 20px 0 60px;
+}
+
+.contactRowContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.contactCard {
+  flex: 1 1 0px; /* Enforces equal sizing for all 5 cards */
+  min-width: 0;   /* Prevents flex items from overflowing text width */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  padding: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contactCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.15);
+}
+
+.contactIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b5cf6;
+  flex-shrink: 0;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.contactLabel {
+  font-size: 25px;
+  color: #e2e8f0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.contactValue {
+  font-size: 17px;
+  color: #94a3b8;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =================================
+   3. CTA Section
+================================= */
+.ctaSection {
+  padding: 0 0 100px;
+}
+
+.ctaCard {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+.ctaLeft {
+  max-width: 650px;
+}
+
+.ctaTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+}
+
+.ctaGradient {
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ctaRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ctaButtonPrimary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 23px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.ctaButtonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.ctaButtonSecondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.ctaButtonSecondary:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.7);
+  transform: translateY(-2px);
+}
+
+/* =================================
+   4. Responsive Styles
+================================= */
+@media (max-width: 1024px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .profileCard {
+    height: 380px;
+  }
+
+  .contactRowContainer {
+    flex-wrap: wrap;
+  }
+
+  .contactCard {
+    flex: 1 1 calc(50% - 16px);
+  }
+
+  .ctaCard {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutTitle {
+    font-size: 36px;
+  }
+
+  .contactCard {
+    flex: 1 1 100%;
+  }
+
+  .ctaRight {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaButtonPrimary,
+  .ctaButtonSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,619 @@
+/* ==========================================================================
+   Base & Layout
+   ========================================================================== */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0e17 0%, #0f172a 50%, #0a0e17 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Base Card Styling */
+.skillCard,
+.otherContainer {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 20px;
+  padding: 32px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.skillCard:hover,
+.otherContainer:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-4px);
+}
+
+.otherContainer {
+  width: 100%;
+  margin-top: 24px;
+}
+
+/* ==========================================================================
+   Shared Components & Badges
+   ========================================================================== */
+
+.learningIcon,
+.cardIcon {
+  width: 60px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Color Variant Overrides */
+.cardIconPurple {
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #8b5cf6;
+}
+
+.cardIconBlue {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+}
+
+.cardIconGreen {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+}
+
+.cardIconAmber {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+}
+
+/* Numbers */
+.cardNumber {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0;
+}
+
+.cardNumberPurple { color: #8b5cf6; }
+.cardNumberBlue   { color: #3b82f6; }
+.cardNumberGreen  { color: #10b981; }
+.cardNumberAmber  { color: #f59e0b; }
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.buttonPrimary {
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.buttonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+/* Section Spacing */
+.skillsGrid,
+.statsSection {
+  padding: 60px 0;
+}
+
+.ctaSection {
+  padding: 60px 0 100px;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero {
+  padding: 120px 0 80px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  align-items: center;
+  transform: translateX(-60px);
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heroTitle {
+  font-size: 68px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+
+.heroGradient {
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroDescription {
+  font-size: 25px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.learningCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  margin-top: 8px;
+}
+
+.learningContent {
+  flex: 1;
+}
+
+.learningTitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.learningDescription {
+  font-size: 23px;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.heroRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.heroVisual {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-52%, -40%);
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.45) 0%,
+    rgba(99, 102, 241, 0.3) 35%,
+    rgba(59, 130, 246, 0.18) 55%,
+    transparent 75%
+  );
+  box-shadow:
+    0 0 80px rgba(139, 92, 246, 0.5),
+    0 0 140px rgba(139, 92, 246, 0.35),
+    0 0 200px rgba(59, 130, 246, 0.2);
+  z-index: 1;
+}
+
+.heroImage {
+  position: relative;
+  z-index: 2;
+  transform: translate(-10px, -20px);
+}
+
+/* ==========================================================================
+   Skills Grid Section
+   ========================================================================== */
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.cardHeaderText {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.5px;
+}
+
+.cardDescription {
+  font-size: 20px;
+  color: #94a3b8;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.techGroup {
+  margin-bottom: 20px;
+}
+
+.techGroup:last-child {
+  margin-bottom: 0;
+}
+
+.groupLabel {
+  font-size: 22px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+.techTiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.techTile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 16px;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 15px;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.techTile:hover {
+  background: rgba(59, 88, 136, 0.7);
+  border-color: rgba(135, 137, 223, 0.3);
+  transform: translateY(-2px);
+}
+
+.skillIcon {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+}
+
+.techTile span {
+  font-size: 20px;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Stats & CTA Sections
+   ========================================================================== */
+
+.statsCard {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+.statsLeft {
+  flex-shrink: 0;
+}
+
+.statsIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid #8b5cf6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b5cf6;
+}
+
+.statsCenter {
+  flex: 1;
+}
+
+.statsTitle,
+.ctaTitle {
+  font-size: 31px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.statsTitle {
+  color: #8b5cf6;
+}
+
+.ctaTitle {
+  color: #ffffff;
+}
+
+.statsDescription,
+.ctaDescription {
+  font-size: 22px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.statsDescription {
+  line-height: 1.6;
+}
+
+.statsRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 35px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.statLabel {
+  font-size: 20px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.statDivider {
+  width: 1px;
+  height: 48px;
+  background: rgba(99, 102, 241, 0.3);
+}
+
+.ctaCard {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.ctaLeft {
+  flex: 1;
+}
+
+.ctaRight {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .heroRight {
+    order: -1;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .statsCard,
+  .ctaCard {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .statsRight,
+  .ctaRight {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .statsRight {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 60px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .heroDescription {
+    font-size: 14px;
+  }
+
+  .heroVisual {
+    width: 300px;
+    height: 300px;
+  }
+
+  .heroGlow {
+    width: 250px;
+    height: 250px;
+  }
+
+  .skillCard,
+  .statsCard,
+  .ctaCard {
+    padding: 24px;
+  }
+
+  .learningCard {
+    padding: 16px;
+  }
+
+  .cardNumber {
+    font-size: 36px;
+  }
+
+  .statsTitle,
+  .ctaTitle {
+    font-size: 24px;
+  }
+
+  .statNumber {
+    font-size: 28px;
+  }
+
+  .statDivider {
+    width: 48px;
+    height: 1px;
+  }
+
+  .ctaRight {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+  }
+
+  .heroVisual {
+    width: 250px;
+    height: 250px;
+  }
+
+  .heroGlow {
+    width: 200px;
+    height: 200px;
+  }
+
+  .learningCard {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cardNumber {
+    font-size: 32px;
+  }
+
+  .techTiles {
+    gap: 8px;
+  }
+
+  .techTile {
+    padding: 8px 12px;
+  }
+
+  .statsIcon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .statNumber {
+    font-size: 24px;
+  }
+}

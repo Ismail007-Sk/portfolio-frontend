@@ -1,0 +1,342 @@
+/* Container & Base Styles */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0e17 0%, #0f172a 50%, #0a0e17 100%);
+  color: #f3f4f6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding-bottom: 80px;
+}
+
+/* Main Layout */
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px 0;
+}
+
+.projectTitle {
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  background: linear-gradient(
+    135deg, 
+    #ffffff 0%, 
+    #c084fc 45%, 
+    #6366f1 80%, 
+    #38bdf8 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.35));
+  animation: titleShimmer 6s ease infinite alternate;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.projectTitle:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 35px rgba(168, 85, 247, 0.6));
+}
+
+@keyframes titleShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Hero Showcase & Tablet Device */
+.heroShowcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.carouselArrowLeft,
+.carouselArrowRight {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #0b0f19;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+  flex-shrink: 0;
+}
+
+.carouselArrowLeft:hover,
+.carouselArrowRight:hover {
+  border-color: #a855f7;
+  background: rgba(168, 85, 247, 0.2);
+}
+
+.tabletDevice {
+  background: #080a0f;
+  border: 3px solid #333842; 
+  outline: 1px solid #1a1d24; 
+  outline-offset: -1px;
+  border-radius: 40px;
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.8),
+    0 0 50px rgba(124, 58, 237, 0.25);
+  width: 100%;
+  max-width: 960px;
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.cameraDot {
+  width: 6px;
+  height: 6px;
+  background-color: #1a1e26;
+  border: 1px solid #6c717c;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.tabletScreen {
+  background-color: #070b14;
+  display: flex;
+  min-height: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* Project Carousel (Bottom Chain) */
+.projectCarouselContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(11, 15, 25, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 12px;
+  margin-bottom: 24px;
+}
+
+.projectCarouselArrow {
+  background: rgba(81, 8, 129, 0.479);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f1eef1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.projectCarouselArrow:hover {
+  background: rgba(91, 31, 116, 0.76);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.projectCarouselViewport {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.projectCarouselViewport::-webkit-scrollbar {
+  display: none;
+}
+
+.projectCarouselTrack {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+}
+
+.thumbCard {
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 0 0 calc((100% - 60px) / 6);
+  min-width: 150px;
+  max-width: 380px;
+}
+
+.thumbCardActive {
+  border-color: #6366f1;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+}
+
+.thumbImagePlaceholder {
+  width: 100%;
+  height: 100px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #1f2937;
+}
+
+.thumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .thumbCard {
+    flex: 0 0 calc((100% - 36px) / 4);
+  }
+}
+
+@media (max-width: 768px) {
+  .thumbCard {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+}
+
+/* Action Buttons Row */
+.actionButtonsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.liveDemoBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+}
+
+.outlineBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.greenDot {
+  width: 30px;
+  height: 30px;
+  background-color: #10b981;
+  border-radius: 50%;
+}
+
+.categoryBadge {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #c084fc;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+/* Info Cards Section */
+.infoCardsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoCard {
+  background: rgba(11, 15, 25, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cardIconBox {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardHeader h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.infoCard p {
+  color: #9ca3af;
+  line-height: 1.6;
+  font-size: 23px;
+}
+
+.techStackGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.techPill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(7, 23, 56, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 22px;
+  color: #1156e0;
+  font-weight: 700;
+}
