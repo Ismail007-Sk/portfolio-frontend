@@ -20,14 +20,16 @@ import type {
 export async function createProject(
   data: CreateProjectData
 ): Promise<Project> {
+
+  const cleanedPayload = Object.fromEntries(
+    Object.entries(data).filter(([_, value]) => value !== "")
+  );
+
+
   const response = await api.post<{
     success: boolean;
     data: Project;
-  }>(
-    "/projects",
-    data
-  );
-
+  }>("/projects", cleanedPayload);
   return response.data.data;
 }
 
@@ -64,10 +66,15 @@ export async function updateProject(
   id: string,
   data: UpdateProjectData
 ): Promise<Project> {
+
+  const cleanedPayload = Object.fromEntries(
+    Object.entries(data).filter(([_, value]) => value !== "")
+  );
+
   const response = await api.patch<{
     success: boolean;
     data: Project;
-  }>(`/projects/${id}`, data);
+  }>(`/projects/${id}`, cleanedPayload);
 
   return response.data.data;
 }
