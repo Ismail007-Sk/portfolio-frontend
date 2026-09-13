@@ -156,14 +156,27 @@ export default function SkillsAdminPage() {
           </div>
 
           <div style={{ marginBottom: "15px" }}>
-            <label style={{ display: "block", marginBottom: "5px", color: "#000000" }}>Category *</label>
-            <input
-              type="text"
-              value={formData.category}
-              onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-              required
-              style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #000000", color: "#000000", backgroundColor: "#ffffff" }}
-            />
+  <label style={{ display: "block", marginBottom: "5px", color: "#000000" }}>Category *</label>
+  <select
+    name="category"
+    value={formData.category}
+    onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+    required
+    style={{ 
+      width: "100%", 
+      padding: "8px", 
+      borderRadius: "4px", 
+      border: "1px solid #000000", 
+      color: "#000000", 
+      backgroundColor: "#ffffff" 
+    }}
+  >
+    <option value="" disabled>Select a category</option>
+    <option value="frontend">Frontend</option>
+    <option value="backend">Backend</option>
+    <option value="database">Database</option>
+    <option value="others">Others</option>
+  </select>
           </div>
 
           <div style={{ marginBottom: "15px" }}>
