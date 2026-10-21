@@ -20,7 +20,7 @@ import Loading from "@/components/shared/loading";
 import ErrorMessage from "@/components/shared/error-message";
 
 import styles from "./certificates-education.module.css";
-
+import Image from "next/image";
 import { getCertifications } from "@/features/certificates/certificate.api";
 import { getEducation } from "@/features/education/education.api";
 import { getAchievements } from "@/features/achievement/achievement.api";
@@ -450,7 +450,7 @@ export default function CertificatesEducation() {
               <div className={styles.academicVisual}>
                 <div className={styles.academicGlow} />
 
-                <img
+                <Image
                   src="/certificate.png"
                   alt="Certificates and education"
                   width={1000}
@@ -512,19 +512,12 @@ export default function CertificatesEducation() {
                         >
                           <div className={styles.certLogo}>
                             {certification.issuer_icon_url ? (
-                              <img
-                                src={
-                                  getFileUrl(
-                                    certification.issuer_icon_url
-                                  ) ?? ""
-                                }
-                                alt={
-                                  certification.issuer ??
-                                  "Certificate issuer"
-                                }
-                                className={
-                                  styles.certLogoImage
-                                }
+                              <Image
+                                src={getFileUrl(certification.issuer_icon_url) ?? ""}
+                                alt={certification.issuer ?? "Certificate issuer"}
+                                width={100}
+                                height={100}
+                                className={styles.certLogoImage}
                               />
                             ) : (
                               certification.issuer ??
@@ -713,9 +706,11 @@ export default function CertificatesEducation() {
                       {/* Right: Institution Logo */}
                       <div className={styles.eduRight}>
                         <div className={styles.institutionLogo}>
-                          <img
+                          <Image
                             src={institutionIcon}
                             alt={`${item.institution} logo`}
+                            width={130}
+                            height={90}
                           />
                         </div>
                       </div>
@@ -804,17 +799,13 @@ export default function CertificatesEducation() {
                             }
                           >
                             {achievement.icon_url ? (
-                              <img
-                                src={
-                                  getFileUrl(
-                                    achievement.icon_url
-                                  ) ?? ""
-                                }
-                                alt=""
-                                className={
-                                  styles.achievementIconImage
-                                }
-                              />
+                                <Image
+                                  src={getFileUrl(achievement.icon_url) ?? ""}
+                                  alt=""
+                                  width={100}
+                                  height={50}
+                                  className={styles.achievementIconImage}
+                                />
                             ) : (
                               fallbackIcons[
                                 index %

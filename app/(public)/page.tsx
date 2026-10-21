@@ -519,12 +519,14 @@ export default function Home() {
                 >
                   <div className={styles.featuredThumb}>
                     {project.imageUrl ? (
-                      <img
+                      <Image
                         src={project.imageUrl}
                         alt={
                           project.altText ||
                           project.title
                         }
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className={styles.featuredImage}
                       />
                     ) : (
@@ -648,9 +650,11 @@ export default function Home() {
                     className={styles.skillCard}
                   >
                     {iconUrl ? (
-                      <img
+                      <Image
                         src={iconUrl}
                         alt=""
+                        width={30}
+                        height={30}
                         className={styles.skillIcon}
                       />
                     ) : (
@@ -728,9 +732,11 @@ export default function Home() {
                           }
                         >
                           {iconUrl ? (
-                            <img
+                            <Image
                               src={iconUrl}
                               alt={exp.company}
+                              fill
+                              sizes="(max-width: 480px) 25px, (max-width: 768px) 30px, 90px"
                             />
                           ) : (
                             <Building2 size={30} />

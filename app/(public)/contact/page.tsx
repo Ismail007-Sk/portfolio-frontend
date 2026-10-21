@@ -7,7 +7,7 @@ import {
   ArrowRight,
   CircleAlert
 } from "lucide-react";
-
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import styles from "./contact.module.css";
@@ -140,13 +140,13 @@ export default function Contact() {
               <div className={styles.heroVisualArea}>
                 <div className={styles.heroGlow}></div>
 
-                <img
-                  src="/contact.png"
-                  alt="Profile"
-                  width={900}
-                  height={800}
-                  className={styles.heroImage}
-                />
+                  <Image
+                    src="/contact.png"
+                    alt="Profile"
+                    width={900}
+                    height={800}
+                    className={styles.heroImage}
+                  />
 
                 <div className={styles.heroRightText}>
                   <p>Let&apos;s create</p>
@@ -235,9 +235,11 @@ export default function Contact() {
                 className={styles.contactRow}
               >
                 <div className={styles.rowIcon}>
-                  <img
+                  <Image
                     src="/AppIcons/gmail.svg"
                     alt="Email"
+                    width={24}
+                    height={24}
                     className={styles.contactBrandIcon}
                   />
                 </div>
@@ -262,9 +264,11 @@ export default function Contact() {
                   className={styles.contactRow}
                 >
                   <div className={styles.rowIcon}>
-                    <img
+                    <Image
                       src="/AppIcons/linkedin.svg"
                       alt="LinkedIn"
+                      width={24}
+                      height={24}
                       className={styles.contactBrandIcon}
                     />
                   </div>
@@ -293,9 +297,11 @@ export default function Contact() {
                   className={styles.contactRow}
                 >
                   <div className={styles.rowIcon}>
-                    <img
+                    <Image
                       src="/AppIcons/github.svg"
                       alt="GitHub"
+                      width={24}
+                      height={24}
                       className={styles.contactBrandIcon}
                     />
                   </div>
@@ -449,9 +455,11 @@ export default function Contact() {
             <div className={styles.ctaCard}>
               <div className={styles.ctaLeft}>
                 <div className={styles.ctaIcon}>
-                    <img
+                  <Image
                     src="/AppIcons/whatsapp.svg"
                     alt="WhatsApp"
+                    width={24}
+                    height={24}
                     className={styles.ctaBrandIcon}
                   />
                 </div>

@@ -592,165 +592,989 @@
   box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
 }
 
-/* Responsive Design */
+
+/* ============================
+   RESPONSIVE DESIGN
+   ============================ */
+
+/* Tablets and smaller desktops */
 @media (max-width: 1024px) {
+  /* Hero */
+  .hero {
+    min-height: auto;
+    padding: 100px 0 60px;
+  }
+
+  .heroContainer {
+    padding: 0 24px;
+  }
+
   .heroGrid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    transform: none;
   }
 
   .heroRight {
     order: -1;
-  }
-
-  .timelineGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .timelineRight {
-    position: static;
-  }
-
-  .benefitsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .ctaCard {
-    flex-direction: column;
-    text-align: center;
-    gap: 32px;
-  }
-
-  .ctaRight {
-    align-items: center;
     width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 100px 0 60px;
+    justify-content: center;
   }
 
-  .heroTitle {
-    font-size: 40px;
-  }
-
-  .heroDescription {
-    font-size: 14px;
+  .heroLeft {
+    width: 100%;
+    min-width: 0;
   }
 
   .heroVisual {
-    width: 300px;
+    width: 100%;
+    max-width: 380px;
     height: 300px;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    max-width: 100%;
+    height: 270px;
+    object-fit: contain;
+    transform: translateX(10px);
   }
 
   .heroGlow {
     width: 250px;
     height: 250px;
-  }
-
-  .sectionTitle {
-    font-size: 24px;
-  }
-
-  .timelineCard {
-    padding: 16px;
-  }
-
-  .companyName {
-    font-size: 14px;
-  }
-
-  .detailsCard {
-    padding: 24px;
-  }
-
-  .detailsTitle {
-    font-size: 18px;
-  }
-
-  .benefitsGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .ctaCard {
-    padding: 28px;
-  }
-
-  .ctaTitle {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
+    transform: translate(-50%, -50%);
   }
 
   .heroTitle {
-    font-size: 32px;
+    font-size: 48px;
+  }
+
+  .heroDescription {
+    font-size: 18px;
+  }
+
+  /* Experience timeline and details */
+  .timelineGrid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 12px;
+    align-items: start;
+  }
+
+  .timelineLeftWrapper,
+  .timelineLeft {
+    max-height: 750px;
+    min-width: 0;
+  }
+
+  .timelineLeft {
+    padding-left: 6px;
+    padding-right: 5px;
+  }
+
+  .timelineEntry {
+    gap: 8px;
+  }
+
+  .timelineMarker {
+    width: 14px;
+    height: 14px;
+    margin-top: 16px;
+  }
+
+  .timelineCard {
+    min-width: 0;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .timelineCardHeader {
+    gap: 8px;
+  }
+
+  .companyLogo {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+  }
+
+  .companyName {
+    font-size: 15px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .categoryBadge {
+    font-size: 11px;
+    padding: 3px 5px;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .timelineCardFooter {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .timelineMeta {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .timelineRight {
+    position: static;
+    min-width: 0;
+  }
+
+  .detailsCard {
+    min-width: 0;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .detailsHeader {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .detailsTitle {
+    font-size: 20px;
+    overflow-wrap: anywhere;
+  }
+
+  .detailsMeta {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .detailsMetaItem {
+    font-size: 12px;
+    gap: 5px;
+  }
+
+  .detailsSection {
+    margin-bottom: 18px;
+  }
+
+  .detailsSectionTitle {
+    font-size: 17px;
+  }
+
+  .detailsSectionText {
+    font-size: 14px;
+  }
+
+  .detailsSectionDescription,
+  .responsibilityItem {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .responsibilityItem {
+    gap: 7px;
+    margin-bottom: 8px;
+  }
+
+  .techTag {
+    padding: 5px 8px;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  /* Benefits */
+  .benefitsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .benefitCard {
+    padding: 22px 16px;
+  }
+
+  .benefitIcon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 14px;
+  }
+
+  .benefitTitle {
+    font-size: 18px;
+  }
+
+  .benefitDescription {
+    font-size: 14px;
+  }
+
+  /* CTA */
+  .ctaCard {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 18px;
+    padding: 24px;
+  }
+
+  .ctaLeft {
+    flex-shrink: 0;
+  }
+
+  .ctaIcon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .ctaCenter {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ctaSubtitle {
+    font-size: 14px;
+  }
+
+  .ctaTitle {
+    font-size: 22px;
+    overflow-wrap: anywhere;
+  }
+
+  .ctaRight {
+    width: auto;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ctaButton {
+    font-size: 14px;
+    padding: 10px 14px;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile and small tablets */
+@media (max-width: 768px) {
+  /* Hero */
+  .hero {
+    padding: 64px 0 48px;
+  }
+
+  .heroContainer {
+    padding: 0 20px;
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    transform: none;
+  }
+
+  .heroRight {
+    order: -1;
+    justify-content: center;
   }
 
   .heroVisual {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    max-width: 380px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    max-width: 100%;
+    height: 270px;
+    object-fit: contain;
+    transform: translateX(10px);
+  }
+
+  .heroGlow {
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+  }
+
+  .heroLeft {
+    gap: 18px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+    line-height: 1.12;
+  }
+
+  .heroDescription {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  /* Experience timeline and details */
+  .timelineSection,
+  .gainedSection {
+    padding: 36px 0;
+  }
+
+  .sectionHeader {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .sectionIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .sectionTitle {
+    font-size: 25px;
+  }
+
+  .timelineGrid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 10px;
+  }
+
+  .timelineLeftWrapper,
+  .timelineLeft {
+    max-height: 650px;
+  }
+
+  .timelineLeft {
+    padding-left: 5px;
+    padding-right: 3px;
+  }
+
+  .timelineLine {
+    left: 5px;
+    width: 3px;
+  }
+
+  .timelineEntry {
+    gap: 6px;
+  }
+
+  .timelineMarker {
+    width: 11px;
+    height: 11px;
+    margin-top: 14px;
+  }
+
+  .timelineCard {
+    padding: 9px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+  }
+
+  .timelineCardHeader {
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 8px;
+  }
+
+  .companyLogo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .companyName {
+    font-size: 12px;
+    line-height: 1.35;
+    margin-bottom: 5px;
+  }
+
+  .categoryBadge {
+    font-size: 10px;
+    padding: 3px 4px;
+    white-space: normal;
+  }
+
+  .timelineCardFooter {
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 8px;
+  }
+
+  .timelineMeta {
+    font-size: 10px;
+    flex-wrap: wrap;
+  }
+
+  .detailsCard {
+    padding: 13px;
+    border-radius: 12px;
+  }
+
+  .detailsHeader {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .detailsTitle {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .detailsMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    margin-bottom: 12px;
+  }
+
+  .detailsMetaItem {
+    font-size: 11px;
+  }
+
+  .detailsDivider {
+    display: none;
+  }
+
+  .detailsDividerLine {
+    height: 3px;
+    margin: 12px 0;
+  }
+
+  .detailsSection {
+    margin-bottom: 15px;
+  }
+
+  .detailsSectionHeader {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .detailsSectionTitle {
+    font-size: 14px;
+  }
+
+  .detailsSectionText {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .detailsSectionDescription {
+    font-size: 11px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .responsibilityItem {
+    gap: 5px;
+    margin-bottom: 7px;
+    font-size: 11px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .responsibilityItem svg {
+    width: 12px;
+    height: 12px;
+    margin-top: 2px;
+  }
+
+  .technologyTags {
+    gap: 5px;
+  }
+
+  .techTag {
+    padding: 4px 6px;
+    border-radius: 6px;
+    font-size: 10px;
+    overflow-wrap: anywhere;
+  }
+
+  /* Benefits: two columns */
+  .benefitsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .benefitCard {
+    padding: 18px 12px;
+    border-radius: 14px;
+  }
+
+  .benefitIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    margin-bottom: 12px;
+  }
+
+  .benefitTitle {
+    font-size: 16px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+  }
+
+  .benefitDescription {
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  /* CTA: wider and shorter */
+  .ctaSection {
+    padding: 32px 0 48px;
+  }
+
+  .ctaCard {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .ctaLeft {
+    flex-shrink: 0;
+  }
+
+  .ctaIcon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .ctaCenter {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ctaSubtitle {
+    font-size: 11px;
+    line-height: 1.35;
+    margin-bottom: 5px;
+  }
+
+  .ctaTitle {
+    font-size: 17px;
+    line-height: 1.25;
+    margin-bottom: 0;
+  }
+
+  .ctaRight {
+    width: auto;
+    max-width: 110px;
+    flex-shrink: 0;
+    gap: 8px;
+  }
+
+  .ctaButton {
+    width: 100%;
+    max-width: 110px;
+    justify-content: center;
+    padding: 9px 8px;
+    gap: 5px;
+    font-size: 11px;
+    white-space: normal;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  /* Hero: same image positioning reference */
+  .hero {
+    min-height: auto;
+    padding: 32px 0 40px;
+  }
+
+  .heroContainer {
+    padding: 0 16px;
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    transform: none;
+  }
+
+  .heroRight {
+    order: -1;
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .heroLeft {
+    width: 100%;
+    min-width: 0;
+    gap: 12px;
+  }
+
+  .heroVisual {
+    width: 100%;
+    max-width: 380px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    width: 380px;
+    max-width: 100%;
+    height: 270px;
+    object-fit: contain;
+    position: relative;
+    left: 10px;
+    transform: none;
   }
 
   .heroGlow {
     width: 200px;
     height: 200px;
+    transform: translate(-50%, -50%);
+  }
+
+  .heroTitle {
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    overflow-wrap: anywhere;
+  }
+
+  .heroDescription {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  /* Experience section heading */
+  .timelineSection,
+  .gainedSection {
+    padding: 30px 0;
   }
 
   .sectionHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .sectionIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  /* Timeline and details side by side */
+  .timelineGrid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 8px;
+    align-items: start;
+  }
+
+  .timelineLeftWrapper {
+    max-height: 600px;
+    min-width: 0;
+    border-radius: 8px;
+  }
+
+  .timelineLeft {
+    max-height: 600px;
+    min-width: 0;
+    padding-left: 4px;
+    padding-right: 2px;
+  }
+
+  .timelineLine {
+    left: 4px;
+    width: 2px;
+  }
+
+  .timelineEntry {
+    gap: 4px;
+  }
+
+  .timelineMarker {
+    width: 9px;
+    height: 9px;
+    margin-top: 12px;
+    border-width: 1px;
   }
 
   .timelineCard {
-    padding: 14px;
+    min-width: 0;
+    padding: 7px;
+    margin-bottom: 7px;
+    border-radius: 8px;
+  }
+
+  .timelineCardHeader {
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 7px;
   }
 
   .companyLogo {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+  }
+
+  .companyInfo {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .companyName {
+    font-size: 10px;
+    line-height: 1.35;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+  }
+
+  .categoryBadge {
+    max-width: 100%;
+    padding: 3px 4px;
+    border-radius: 4px;
+    font-size: 9px;
+    line-height: 1.25;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .timelineCardFooter {
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 6px;
+  }
+
+  .timelineMeta {
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+    font-size: 9px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .timelineMeta svg {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+  }
+
+  /* Details panel */
+  .timelineRight {
+    position: static;
+    min-width: 0;
   }
 
   .detailsCard {
-    padding: 20px;
+    min-width: 0;
+    padding: 10px;
+    border-radius: 10px;
   }
 
   .detailsHeader {
     flex-direction: column;
-    gap: 12px;
+    gap: 6px;
+    margin-bottom: 9px;
+  }
+
+  .detailsTitle {
+    font-size: 13px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
   }
 
   .detailsMeta {
     flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .detailsMetaItem {
+    gap: 4px;
+    font-size: 9px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .detailsMetaItem svg {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
   }
 
   .detailsDivider {
-    width: 100%;
-    height: 1px;
+    display: none;
+  }
+
+  .detailsDividerLine {
+    height: 2px;
+    margin: 9px 0;
+  }
+
+  .detailsSection {
+    margin-bottom: 12px;
+  }
+
+  .detailsSectionHeader {
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+
+  .detailsSectionHeader svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .detailsSectionTitle {
+    font-size: 11px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .detailsSectionText {
+    font-size: 10px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+  }
+
+  .detailsSectionDescription {
+    font-size: 10px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .responsibilitiesList {
+    min-width: 0;
+  }
+
+  .responsibilityItem {
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 6px;
+    font-size: 9px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .responsibilityItem svg {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .technologyTags {
+    gap: 4px;
+  }
+
+  .techTag {
+    min-width: 0;
+    padding: 3px 5px;
+    border-radius: 5px;
+    font-size: 9px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  /* Benefits: two equal columns */
+  .benefitsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .benefitCard {
-    padding: 24px;
+    min-width: 0;
+    padding: 14px 9px;
+    border-radius: 11px;
+  }
+
+  .benefitIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    margin-bottom: 10px;
+  }
+
+  .benefitTitle {
+    font-size: 13px;
+    line-height: 1.35;
+    margin-bottom: 6px;
+    overflow-wrap: anywhere;
+  }
+
+  .benefitDescription {
+    font-size: 10px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  /* CTA: horizontal, wide and short */
+  .ctaSection {
+    padding: 24px 0 32px;
   }
 
   .ctaCard {
-    padding: 24px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 9px;
+    border-radius: 12px;
+  }
+
+  .ctaLeft {
+    flex-shrink: 0;
   }
 
   .ctaIcon {
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    height: 32px;
+    border-width: 1px;
+  }
+
+  .ctaCenter {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ctaSubtitle {
+    font-size: 9px;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+
+  .ctaTitle {
+    font-size: 14px;
+    line-height: 1.25;
+    letter-spacing: -0.2px;
+    overflow-wrap: anywhere;
+  }
+
+  .ctaRight {
+    flex-shrink: 0;
+    width: auto;
+    max-width: 82px;
+    gap: 5px;
   }
 
   .ctaButton {
     width: 100%;
+    max-width: 82px;
+    box-sizing: border-box;
     justify-content: center;
+    gap: 4px;
+    padding: 7px 5px;
+    font-size: 9px;
+    line-height: 1.25;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }

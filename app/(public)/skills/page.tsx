@@ -11,7 +11,7 @@ import ErrorMessage from "@/components/shared/error-message";
 import { getSkills } from "@/features/skills/skill.api";
 import type { Skill } from "@/features/skills/skill.types";
 import styles from "./skills.module.css";
-
+import Image from "next/image";
 function getFileUrl(url: string | null): string | null {
   if (!url) return null;
   if (url.startsWith("http://") || url.startsWith("https://")) return url;
@@ -133,7 +133,7 @@ export default function Skills() {
             <div className={styles.heroRight}>
               <div className={styles.heroVisual}>
                 <div className={styles.heroGlow}></div>
-                  <img
+                  <Image
                     src="/skills.png"
                     alt="Skills Hero"
                     width={1000}
@@ -188,11 +188,13 @@ export default function Skills() {
                     return (
                       <div key={skill.id} className={styles.techTile}>
                         {iconUrl && (
-                          <img
-                            src={iconUrl}
-                            alt={skill.name}
-                            className={styles.skillIcon}
-                          />
+                            <Image
+                              src={iconUrl}
+                              alt={skill.name}
+                              width={38}
+                              height={38}
+                              className={styles.skillIcon}
+                            />
                         )}
                         <span>{skill.name}</span>
                       </div>

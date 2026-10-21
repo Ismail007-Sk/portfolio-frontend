@@ -702,137 +702,616 @@
    ========================================================= */
 
 @media (max-width: 1024px) {
+  /* Hero section */
+  .hero {
+    min-height: auto;
+    padding: 100px 0 60px;
+  }
+
+  .heroContainer {
+    padding: 0 24px;
+  }
+
   .heroGrid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    transform: none;
   }
 
   .heroRight {
     order: -1;
-  }
-
-  .availabilityCard {
-    flex-direction: column;
-    text-align: left;
-    gap: 32px;
-  }
-
-  .availabilityLeft {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .availabilityRight {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .availabilityTag {
-    flex: 1;
-    justify-content: center;
-  }
-
-  .ctaCard {
-    flex-direction: column;
-    text-align: left;
-    gap: 32px;
-  }
-
-  .ctaLeft {
-    width: 100%;
-  }
-
-  .ctaRight {
-    width: 100%;
-  }
-}
-
-
-/* =========================================================
-   Responsive Design — Mobile
-   ========================================================= */
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 100px 0 60px;
-  }
-
-  .heroTitle {
-    font-size: 36px;
-  }
-
-  .heroButtons {
-    flex-direction: column;
-  }
-
-  .button {
     width: 100%;
     justify-content: center;
+  }
+
+  .heroLeft {
+    width: 100%;
+    min-width: 0;
+    gap: 20px;
   }
 
   .heroVisualArea {
-    width: 300px;
+    width: 100%;
+    max-width: 380px;
     height: 300px;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    max-width: 100%;
+    height: 270px;
+    object-fit: contain;
+    transform: translateX(10px);
   }
 
   .heroGlow {
     width: 250px;
     height: 250px;
+    transform: translate(-50%, -50%);
   }
 
   .heroRightText {
-    font-size: 20px;
+    top: -20px;
+    left: 50%;
+    width: min(350px, 90%);
+    transform: translateX(-50%);
+    font-size: 28px;
+  }
+
+  .heroArrow {
+    width: 180px;
+    height: 70px;
+    right: -40px;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+  }
+
+  .heroDescription {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+
+  .heroLabel {
+    font-size: 21px;
+  }
+
+  .heroButtons {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .button,
+  .buttonCV {
+    font-size: 18px;
+    padding: 11px 22px;
+  }
+
+  .statusBadge {
+    font-size: 17px;
+  }
+
+  /* Contact information */
+  .contactSection,
+  .availabilitySection {
+    padding: 36px 0;
   }
 
   .contactCard {
     padding: 28px;
+    border-radius: 18px;
   }
 
   .contactHeader {
-    flex-direction: column;
-    text-align: center;
     gap: 16px;
+    margin-bottom: 24px;
   }
 
-  .contactRow {
-    flex-direction: column;
-    text-align: center;
+  .contactIcon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .contactTitle {
+    font-size: 29px;
+  }
+
+  .contactDescription {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .contactRows {
     gap: 12px;
   }
 
+  .contactRow {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 12px;
+    padding: 16px;
+    min-width: 0;
+  }
+
+  .rowIcon {
+    width: 46px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .contactBrandIcon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .rowContent {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .rowLabel {
+    font-size: 17px;
+  }
+
+  .rowValue {
+    font-size: 14px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
   .rowAction {
+    font-size: 14px;
+    gap: 5px;
+  }
+
+  .contactDisplay {
+    min-width: 0;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .contactSubtext {
+    text-align: left;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+
+  /* Availability: wide, compact card */
+  .availabilityCard {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 28px;
+    border-radius: 18px;
+  }
+
+  .availabilityLeft {
+    flex: 1;
+    min-width: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .availabilityIcon {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+  }
+
+  .availabilityContent {
+    min-width: 0;
+  }
+
+  .availabilityPrefix {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+
+  .availabilityTitle {
+    font-size: 28px;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .availabilityTitleUnavailable {
+    transform: none;
+  }
+
+  .availabilityDescription {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: none;
+  }
+
+  .availabilityRight {
+    flex: 0 1 auto;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .availabilityTag {
+    justify-content: center;
+    padding: 10px 13px;
+    font-size: 14px;
+    white-space: normal;
+  }
+
+  /* CTA: horizontal layout */
+  .ctaSection {
+    padding: 36px 0 60px;
+  }
+
+  .ctaCard {
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    padding: 26px;
+    border-radius: 18px;
+  }
+
+  .ctaLeft {
+    flex: 1;
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+  }
+
+  .ctaIcon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+  }
+
+  .ctaContent {
+    min-width: 0;
+  }
+
+  .ctaTitle {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .ctaDescription {
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .ctaRight {
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .ctaBrandIcon {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+
+/* =========================================================
+   Responsive Design — Mobile / Tablet
+   ========================================================= */
+
+@media (max-width: 768px) {
+  /* Hero */
+  .hero {
+    padding: 64px 0 48px;
+  }
+
+  .heroContainer {
+    padding: 0 20px;
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    transform: none;
+  }
+
+  .heroRight {
+    order: -1;
     width: 100%;
     justify-content: center;
   }
 
+  .heroLeft {
+    width: 100%;
+    min-width: 0;
+    gap: 18px;
+  }
+
+  .heroVisualArea {
+    width: 100%;
+    max-width: 380px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    max-width: 100%;
+    height: 270px;
+    object-fit: contain;
+    transform: translateX(10px);
+  }
+
+  .heroGlow {
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+  }
+
+  .heroRightText {
+    top: -10px;
+    left: 50%;
+    width: min(300px, 85%);
+    transform: translateX(-50%);
+    font-size: 22px;
+  }
+
+  .heroArrow {
+    width: 130px;
+    height: 55px;
+    right: -20px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+    line-height: 1.12;
+  }
+
+  .heroDescription {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .heroLabel {
+    font-size: 17px;
+    letter-spacing: 1.5px;
+  }
+
+  .heroButtons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .button,
+  .buttonCV {
+    width: auto;
+    max-width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  .statusBadge {
+    align-self: flex-start;
+    max-width: 100%;
+    font-size: 14px;
+    padding: 8px 11px;
+    line-height: 1.3;
+    flex-wrap: wrap;
+  }
+
+  /* Contact section */
+  .contactSection,
+  .availabilitySection {
+    padding: 30px 0;
+  }
+
+  .contactCard {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .contactHeader {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .contactIcon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .contactTitle {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .contactDescription {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .contactRows {
+    gap: 10px;
+  }
+
+  .contactRow {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    padding: 13px;
+    border-radius: 10px;
+  }
+
+  .rowIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .contactBrandIcon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+  }
+
+  .rowLabel {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .rowValue {
+    font-size: 12px;
+    line-height: 1.45;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .rowAction {
+    width: auto;
+    justify-content: center;
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  .contactDisplay {
+    min-width: 0;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .contactSubtext {
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  /* Availability card */
   .availabilityCard {
-    padding: 28px;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 16px;
+    border-radius: 15px;
+  }
+
+  .availabilityLeft {
+    flex: 1;
+    min-width: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .availabilityIcon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .availabilityContent {
+    min-width: 0;
+  }
+
+  .availabilityPrefix {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 5px;
   }
 
   .availabilityTitle {
-    font-size: 24px;
+    font-size: 21px;
+    line-height: 1.25;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+  }
+
+  .availabilityTitleUnavailable {
+    transform: none;
+  }
+
+  .availabilityDescription {
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   .availabilityRight {
+    width: auto;
+    flex: 0 0 auto;
     flex-direction: column;
+    gap: 7px;
   }
 
   .availabilityTag {
-    width: 100%;
-  }
-
-  .ctaCard {
-    padding: 28px;
-  }
-
-  .ctaLeft {
-    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 10px;
+    font-size: 11px;
+    line-height: 1.3;
+    white-space: normal;
     text-align: center;
   }
 
+  /* CTA: compact and wide */
+  .ctaSection {
+    padding: 30px 0 44px;
+  }
+
+  .ctaCard {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .ctaLeft {
+    flex: 1;
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .ctaIcon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .ctaContent {
+    min-width: 0;
+  }
+
   .ctaTitle {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+  }
+
+  .ctaDescription {
+    font-size: 12px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .ctaRight {
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .ctaBrandIcon {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -843,62 +1322,440 @@
 
 @media (max-width: 480px) {
   .container {
+    padding: 0 12px;
+  }
+
+  /* Hero: same position and dimensions as previous pages */
+  .hero {
+    min-height: auto;
+    padding: 32px 0 40px;
+  }
+
+  .heroContainer {
     padding: 0 16px;
   }
 
-  .heroTitle {
-    font-size: 28px;
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    transform: none;
   }
 
-  .heroDescription {
-    font-size: 14px;
+  /* Arrow points down and left toward the character */
+  .heroArrow {
+    display: block;
+    position: absolute;
+    top: 58px;
+    right: 0;
+    width: 88px;
+    height: 90px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .heroArrow svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .heroLeft {
+    min-width: 0;
+    width: 100%;
+    gap: 12px;
+  }
+
+
+  .heroRight {
+    order: -1;
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .heroLeft {
+    width: 100%;
+    min-width: 0;
+    gap: 12px;
   }
 
   .heroVisualArea {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    max-width: 380px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    width: 380px;
+    max-width: 100%;
+    height: 270px;
+    object-fit: contain;
+    transform: translateX(10px);
   }
 
   .heroGlow {
     width: 200px;
     height: 200px;
+    transform: translate(-50%, -50%);
   }
 
   .heroRightText {
-    font-size: 18px;
+      position: absolute;
+      top: 8px;
+      right: 0;
+      left: auto;
+      width: 125px;
+      max-width: 42%;
+      transform: none;
+      font-size: 13px;
+      line-height: 1.15;
+      z-index: 5;
+    }
+
+  .heroArrow svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .heroLabel {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    overflow-wrap: anywhere;
+  }
+
+  .heroDescription {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .heroButtons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .button,
+  .buttonCV {
+    flex: 1 1 125px;
+    width: auto;
+    min-width: 0;
+    padding: 10px 9px;
+    font-size: 12px;
+    gap: 6px;
+    border-radius: 9px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .statusBadge {
+    font-size: 12px;
+    padding: 7px 9px;
+    gap: 5px;
+    border-radius: 10px;
+  }
+
+  /* Contact information: wider, shorter rows */
+  .contactSection {
+    padding: 24px 0;
   }
 
   .contactCard {
-    padding: 20px;
+    padding: 15px 11px;
+    border-radius: 12px;
+  }
+
+  .contactHeader {
+    flex-direction: row;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 15px;
+  }
+
+  .contactIcon {
+    width: 36px;
+    height: 36px;
+    border-width: 1px;
   }
 
   .contactTitle {
-    font-size: 24px;
+    font-size: 19px;
+    line-height: 1.3;
+    margin-bottom: 4px;
+    overflow-wrap: anywhere;
+  }
+
+  .contactDescription {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .contactRows {
+    gap: 8px;
   }
 
   .contactRow {
-    padding: 16px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 8px;
+    border-radius: 9px;
+  }
+
+  .rowIcon {
+    width: 34px;
+    height: 34px;
+    border-radius: 7px;
+    flex-shrink: 0;
+  }
+
+  .contactBrandIcon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  .rowContent {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .rowLabel {
+    font-size: 12px;
+    line-height: 1.3;
+    margin-bottom: 3px;
+  }
+
+  .rowValue {
+    font-size: 10px;
+    line-height: 1.4;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .rowAction {
+    flex-shrink: 0;
+    width: auto;
+    gap: 3px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .contactDisplay {
+    min-width: 0;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  .contactSubtext {
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  /* Availability: compact horizontal card */
+  .availabilitySection {
+    padding: 24px 0;
   }
 
   .availabilityCard {
-    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 10px;
+    border-radius: 12px;
+  }
+
+  .availabilityLeft {
+    flex: 1;
+    min-width: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 7px;
   }
 
   .availabilityIcon {
-    width: 56px;
-    height: 56px;
+    width: 32px;
+    height: 32px;
+    border-width: 1px;
+    flex-shrink: 0;
+  }
+
+  .availabilityContent {
+    min-width: 0;
+  }
+
+  .availabilityPrefix {
+    font-size: 10px;
+    line-height: 1.35;
+    margin-bottom: 4px;
   }
 
   .availabilityTitle {
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+  }
+
+  .availabilityTitleUnavailable {
+    transform: none;
+  }
+
+  .availabilityDescription {
+    font-size: 10px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .availabilityRight {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 84px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .availabilityTag {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    gap: 4px;
+    padding: 7px 5px;
+    font-size: 9px;
+    line-height: 1.3;
+    border-radius: 20px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
+  /* CTA: wide and short, following previous pages */
+  .ctaSection {
+    padding: 24px 0 32px;
   }
 
   .ctaCard {
-    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 9px;
+    border-radius: 12px;
+  }
+
+  .ctaLeft {
+    flex: 1;
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
   }
 
   .ctaIcon {
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
+    border-width: 1px;
+    flex-shrink: 0;
+  }
+
+  .ctaContent {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ctaTitle {
+    font-size: 14px;
+    line-height: 1.25;
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
+    overflow-wrap: anywhere;
+  }
+
+  .ctaDescription {
+    font-size: 10px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .ctaRight {
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .ctaBrandIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .ctaCard {
+    gap: 8px;
+    padding: 12px 9px;
+  }
+
+  .ctaLeft {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ctaContent {
+    min-width: 0;
+  }
+
+  .ctaRight {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+  }
+
+  .contactDisplay {
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Target the actual WhatsApp link */
+  .ctaRight a.buttonPrimary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    min-width: 0;
+    max-width: 115px;
+    max-height: 10px;
+    min-height: 38px;
+    box-sizing: border-box;
+
+    padding: 8px 10px;
+    border-radius: 9px;
+
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 700;
+    text-align: center;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .ctaRight .contactSubtext {
+    max-width: 112px;
+    font-size: 9px;
+    line-height: 1.3;
+    text-align: center;
   }
 }

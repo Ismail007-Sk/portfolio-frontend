@@ -116,7 +116,7 @@ export default function ExperiencePage() {
               <div className={styles.heroVisual}>
                 <div className={styles.heroGlow}></div>
                
-                <img
+                <Image
                   src="/experience.png"
                   alt="Experience Hero"
                   width={1000}

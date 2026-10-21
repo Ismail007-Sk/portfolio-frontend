@@ -480,140 +480,784 @@
    Responsive Breakpoints
    ========================================================================== */
 
+/* Tablets and smaller desktops */
 @media (max-width: 1024px) {
+  /* Hero */
+  .hero {
+    min-height: auto;
+    padding: 100px 0 60px;
+  }
+
+  .heroContainer {
+    padding: 0 24px;
+  }
+
   .heroGrid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    transform: none;
   }
 
   .heroRight {
     order: -1;
-  }
-
-  .gridContainer {
-    grid-template-columns: 1fr;
-  }
-
-  .statsCard,
-  .ctaCard {
-    flex-direction: column;
-    text-align: center;
-    gap: 32px;
-  }
-
-  .statsRight,
-  .ctaRight {
     width: 100%;
     justify-content: center;
   }
 
-  .statsRight {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 100px 0 60px;
-  }
-
-  .heroTitle {
-    font-size: 40px;
-  }
-
-  .heroDescription {
-    font-size: 14px;
+  .heroLeft {
+    width: 100%;
+    min-width: 0;
   }
 
   .heroVisual {
-    width: 300px;
+    width: 100%;
+    max-width: 380px;
     height: 300px;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    max-width: 100%;
+    height: 270px;
+    object-fit: contain;
+    transform: translateX(10px);
   }
 
   .heroGlow {
     width: 250px;
     height: 250px;
+    transform: translate(-50%, -50%);
+  }
+
+  .heroTitle {
+    font-size: 48px;
+  }
+
+  .heroDescription {
+    font-size: 18px;
+  }
+
+  .learningCard {
+    gap: 12px;
+  }
+
+  .learningTitle {
+    font-size: 18px;
+  }
+
+  .learningDescription {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  /* Skills cards 1–4: two columns */
+  .gridContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
   }
 
   .skillCard,
-  .statsCard,
-  .ctaCard {
+  .otherContainer {
+    min-width: 0;
     padding: 24px;
+  }
+
+  .cardTitle {
+    font-size: 24px;
+  }
+
+  .cardDescription {
+    font-size: 16px;
+  }
+
+  .groupLabel {
+    font-size: 16px;
+  }
+
+  .techTile {
+    gap: 9px;
+    padding: 8px 10px;
+  }
+
+  .skillIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .techTile span {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+  }
+
+  /* Other technologies: one column */
+  .otherContainer {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Stats */
+  .statsCard {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 24px;
+    padding: 28px;
+  }
+
+  .statsLeft {
+    flex-shrink: 0;
+  }
+
+  .statsCenter {
+    flex: 1 1 240px;
+    min-width: 0;
+  }
+
+  .statsRight {
+    flex: 1 1 100%;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .statsTitle,
+  .ctaTitle {
+    font-size: 25px;
+  }
+
+  .statsDescription,
+  .ctaDescription {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .statNumber {
+    font-size: 30px;
+  }
+
+  .statLabel {
+    font-size: 15px;
+  }
+
+  /* CTA */
+  .ctaCard {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
+    padding: 28px;
+  }
+
+  .ctaLeft {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ctaRight {
+    flex-shrink: 0;
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .button {
+    width: auto;
+    font-size: 16px;
+    padding: 11px 16px;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile and small tablets */
+@media (max-width: 768px) {
+  /* Hero */
+  .hero {
+    padding: 64px 0 48px;
+  }
+
+  .heroContainer {
+    padding: 0 20px;
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    transform: none;
+  }
+
+  .heroRight {
+    order: -1;
+    justify-content: center;
+  }
+
+  .heroVisual {
+    width: 100%;
+    max-width: 380px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    max-width: 100%;
+    height: 270px;
+    object-fit: contain;
+    transform: translateX(10px);
+  }
+
+  .heroGlow {
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+  }
+
+  .heroLeft {
+    gap: 18px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+    line-height: 1.12;
+  }
+
+  .heroDescription {
+    font-size: 16px;
+    line-height: 1.55;
   }
 
   .learningCard {
     padding: 16px;
+    gap: 12px;
+  }
+
+  .learningIcon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .learningTitle {
+    font-size: 16px;
+  }
+
+  .learningDescription {
+    font-size: 14px;
+  }
+
+  /* Skills cards 1–4: retain two columns */
+  .skillsGrid,
+  .statsSection {
+    padding: 36px 0;
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .skillCard,
+  .otherContainer {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .cardHeader {
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+  }
+
+  .learningIcon,
+  .cardIcon {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .cardDescription {
+    font-size: 13px;
+    line-height: 1.45;
   }
 
   .cardNumber {
     font-size: 36px;
   }
 
+  .techGroup {
+    margin-bottom: 16px;
+  }
+
+  .groupLabel {
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 9px;
+  }
+
+  .techTiles {
+    gap: 7px;
+  }
+
+  .techTile {
+    gap: 7px;
+    padding: 7px 8px;
+    border-radius: 9px;
+  }
+
+  .skillIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .techTile span {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  /* Other technologies remain one column */
+  .otherContainer {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  /* Stats */
+  .statsCard {
+    flex-direction: column;
+    gap: 18px;
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .statsIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .statsCenter {
+    flex: none;
+    width: 100%;
+  }
+
   .statsTitle,
   .ctaTitle {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .statsTitle {
+    margin-bottom: 8px;
+  }
+
+  .statsDescription,
+  .ctaDescription {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .statsRight {
+    gap: 14px;
+  }
+
+  .stat {
+    flex: 1;
+    min-width: 0;
   }
 
   .statNumber {
-    font-size: 28px;
+    font-size: 26px;
+  }
+
+  .statLabel {
+    font-size: 12px;
+    overflow-wrap: anywhere;
   }
 
   .statDivider {
-    width: 48px;
-    height: 1px;
+    width: 1px;
+    height: 36px;
+  }
+
+  /* CTA: horizontal and compact */
+  .ctaSection {
+    padding: 32px 0 48px;
+  }
+
+  .ctaCard {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .ctaLeft {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ctaTitle {
+    margin-bottom: 6px;
   }
 
   .ctaRight {
     flex-direction: column;
+    flex-shrink: 0;
+    width: auto;
+    gap: 8px;
   }
 
   .button {
-    width: 100%;
+    width: auto;
+    max-width: 130px;
+    padding: 9px 12px;
+    font-size: 12px;
+    white-space: normal;
   }
 }
 
+/* Small mobile screens */
 @media (max-width: 480px) {
+  /* Shared container */
   .container {
+    padding: 0 12px;
+  }
+
+  /* Hero: match previous responsive image reference */
+  .hero {
+    min-height: auto;
+    padding: 32px 0 40px;
+  }
+
+  .heroContainer {
     padding: 0 16px;
   }
 
-  .heroTitle {
-    font-size: 32px;
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    transform: none;
+  }
+
+  .heroRight {
+    order: -1;
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .heroLeft {
+    width: 100%;
+    min-width: 0;
+    gap: 12px;
   }
 
   .heroVisual {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    max-width: 380px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    width: 380px;
+    max-width: 100%;
+    height: 270px;
+    object-fit: contain;
+    position: relative;
+    left: 1px;
+    transform: none;
   }
 
   .heroGlow {
     width: 200px;
     height: 200px;
+    transform: translate(-50%, -50%);
   }
 
-  .learningCard {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cardNumber {
+  .heroTitle {
     font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    overflow-wrap: anywhere;
   }
 
-  .techTiles {
+  .heroDescription {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  /* Learning card: compact horizontal layout */
+  .learningCard {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    padding: 12px;
+    margin-top: 4px;
+    border-radius: 12px;
+  }
+
+  .learningIcon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
+  .learningContent {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .learningTitle {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .learningDescription {
+    font-size: 11px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  /* Skills cards 1–4: two columns */
+  .skillsGrid {
+    padding: 30px 0;
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 
+  .skillCard {
+    min-width: 0;
+    padding: 12px 9px;
+    border-radius: 11px;
+  }
+
+  .cardHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+  }
+
+  .cardIcon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .cardHeaderText {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .cardTitle {
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+  }
+
+  .cardDescription {
+    font-size: 11px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .cardNumber {
+    font-size: 30px;
+  }
+
+  .techGroup {
+    margin-bottom: 12px;
+  }
+
+  .groupLabel {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    line-height: 1.4;
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+  }
+
+  .techTiles {
+    gap: 6px;
+  }
+
   .techTile {
-    padding: 8px 12px;
+    min-width: 0;
+    max-width: 100%;
+    gap: 5px;
+    padding: 6px;
+    border-radius: 7px;
+  }
+
+  .skillIcon {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+  }
+
+  .techTile span {
+    min-width: 0;
+    font-size: 10px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  /* Fifth section: other technologies, one column */
+  .otherContainer {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    margin-top: 14px;
+    padding: 14px 11px;
+    border-radius: 11px;
+  }
+
+  .otherContainer .cardHeader {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  .otherContainer .cardTitle {
+    font-size: 15px;
+  }
+
+  .otherContainer .techTile {
+    padding: 7px 8px;
+  }
+
+  .otherContainer .techTile span {
+    font-size: 11px;
+  }
+
+  /* Stats: compact, wide card */
+  .statsSection {
+    padding: 30px 0;
+  }
+
+  .statsCard {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 12px;
+    border-radius: 13px;
+  }
+
+  .statsLeft {
+    flex-shrink: 0;
   }
 
   .statsIcon {
-    width: 64px;
-    height: 64px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .statsCenter {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .statsTitle {
+    font-size: 19px;
+    line-height: 1.3;
+    margin-bottom: 7px;
+  }
+
+  .statsDescription {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .statsRight {
+    width: 100%;
+    gap: 8px;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+
+  .stat {
+    flex: 1;
+    min-width: 0;
   }
 
   .statNumber {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .statLabel {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .statDivider {
+    width: 1px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  /* CTA: wide and short, matching previous responsive work */
+  .ctaSection {
+    padding: 24px 0 32px;
+  }
+
+  .ctaCard {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 9px;
+    border-radius: 12px;
+  }
+
+  .ctaLeft {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ctaTitle {
+    font-size: 14px;
+    line-height: 1.25;
+    margin-bottom: 5px;
+    letter-spacing: -0.2px;
+    overflow-wrap: anywhere;
+  }
+
+  .ctaDescription {
+    font-size: 10px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .ctaRight {
+    flex-direction: column;
+    flex-shrink: 0;
+    width: auto;
+    max-width: 88px;
+    gap: 5px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 88px;
+    box-sizing: border-box;
+    justify-content: center;
+    gap: 4px;
+    padding: 7px 5px;
+    font-size: 9px;
+    line-height: 1.25;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }

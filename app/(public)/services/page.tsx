@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import Image from "next/image";
 import { 
   Code, Server, Brain, Monitor, CheckCircle, 
   ArrowRight, Send, Cpu 
@@ -107,7 +107,7 @@ export default function Services() {
                 <div className={styles.heroGlow}></div>
                 {/* Local Hero Image */}
 
-                  <img
+                  <Image
                     src="/service.png"
                     alt="Services Illustration"
                     width={1000}

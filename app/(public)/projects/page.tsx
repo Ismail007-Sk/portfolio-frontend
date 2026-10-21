@@ -13,7 +13,7 @@ import {
   Layers,
   BookOpenIcon
 } from "lucide-react";
-
+import Image from "next/image";
 import Loading from "@/components/shared/loading";
 import ErrorMessage from "@/components/shared/error-message";
 import {
@@ -173,10 +173,12 @@ export default function ProjectPage() {
             <div className={styles.cameraDot}></div>
             <div className={styles.tabletScreen}>
               {currentImage ? (
-                <img
+                <Image
                   src={getFileUrl(currentImage.image_url) || ""}
                   alt={currentImage.alt_text || activeProject?.title || "Project Screenshot"}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  fill
+                  sizes="(max-width: 480px) calc(100vw - 90px), (max-width: 768px) calc(100vw - 100px), (max-width: 1024px) 85vw, 960px"
+                  style={{ objectFit: "cover" }}
                 />
               ) : (
                 <h2 style={{ margin: "auto", color: "#9ca3af" }}> Not available </h2>
@@ -221,9 +223,11 @@ export default function ProjectPage() {
                   >
                     <div className={styles.thumbImagePlaceholder}>
                       {thumbnailUrl && (
-                        <img
+                        <Image
                           src={thumbnailUrl}
                           alt={primaryImg?.alt_text || project.title}
+                          fill
+                          sizes="(max-width: 360px) 68px, (max-width: 480px) 76px, (max-width: 768px) 180px, 240px"
                           className={styles.thumbImg}
                         />
                       )}

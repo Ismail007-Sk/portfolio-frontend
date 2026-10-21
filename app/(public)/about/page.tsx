@@ -115,9 +115,11 @@ const contactInfo = [
             {/* Left - Full Height Profile Image Card */}
             <div className={styles.profileCard}>
               {profilePic ? (
-                <img 
-                  src={profilePic} 
-                  alt={profile.name} 
+                <Image
+                  src={profilePic}
+                  alt={profile.name}
+                  fill
+                  sizes="(max-width: 768px) 78vw, 35vw"
                   className={styles.profileImage}
                 />
               ) : (
