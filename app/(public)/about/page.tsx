@@ -10,6 +10,10 @@ import Loading from "@/components/shared/loading";
 import ErrorMessage from "@/components/shared/error-message";
 import { getProfiles } from "@/features/profile/profile.api";
 import { Profile } from "@/features/profile/profile.types";
+import Image from "next/image";
+
+
+
 
 export default function About() {
   const [profile, setProfile] = useState<Profile | null>(null);

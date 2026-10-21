@@ -123,22 +123,83 @@
    Responsive
 ========================= */
 
-@media (max-width: 900px) {
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
   .navLinks {
-    gap: 20px;
+    gap: 16px;
   }
 
   .navLink {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
-@media (max-width: 700px) {
-  .navLinks {
-    display: none;
+/* Mobile phones */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 0;
   }
 
   .container {
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  .navLinks {
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .navLink {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .container {
+    flex-direction: column;
     justify-content: center;
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .navLinks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navLinks::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navLink {
+    flex: 0 0 auto;
+    font-size: 10px;
   }
 }

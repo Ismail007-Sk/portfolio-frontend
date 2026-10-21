@@ -1,5 +1,5 @@
 "use client";
-
+import Image from 'next/image';
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
@@ -467,7 +467,7 @@ export default function Home() {
               <div className={styles.profileArea}>
                 <div className={styles.profileRing} />
 
-                <img
+                <Image
                   src="/home.png"
                   alt={
                     profile?.name

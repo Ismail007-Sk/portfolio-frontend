@@ -944,77 +944,387 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
+  /* ---------- Hero: preserve finalized design ---------- */
+
   .hero {
-    padding: 100px 0 60px;
+    min-height: auto;
+    padding: 32px 0 48px;
   }
 
   .heroContainer {
-    padding: 0 24px;
+    padding: 0 20px;
   }
 
-  .heroTitle {
-    font-size: 48px;
-  }
-
-  .heroSubtitle {
-    font-size: 20px;
-  }
-
-  .heroDescription {
-    font-size: 16px;
-  }
-
-  .heroButtons {
-    flex-direction: column;
-  }
-
-  .button {
-    width: 100%;
-  }
-
-  .profileArea {
-    width: 300px;
-    height: 300px;
-  }
-
-  .profileRing {
-    width: 250px;
-    height: 250px;
-  }
-
-  .heroPortrait {
-    width: 190px;
-    height: 190px;
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
     transform: none;
   }
 
-  .featuredGrid,
-  .servicesGrid {
-    grid-template-columns: 1fr;
+  .heroRight {
+    order: -1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .profileArea {
+    width: 100%;
+    max-width: 100%;
+    height: 420px;
+    overflow: visible;
+  }
+
+  .profileRing {
+    width: 230px;
+    height: 230px;
+    transform: translate(-50%, -50%);
+  }
+
+  .heroPortrait {
+    width: min(120%, 350px);
+    max-width: none;
+    height: auto;
+    transform: scale(1.15);
+    transform-origin: center;
+  }
+
+  .heroLeft {
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .heroGreeting {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .heroTitle {
+    font-size: 38px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .heroSubtitle {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  .heroDescription {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .heroButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    flex: 1 1 140px;
+    width: auto;
+    min-width: 0;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .socialAndAvailabilityWrapper {
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .socialLinks {
+    gap: 8px;
+  }
+
+  .socialLink {
+    width: 36px;
+    height: 36px;
+  }
+
+  .inlineAvailabilityBadge {
+    max-width: 100%;
+    height: auto;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .badgeText {
+    white-space: normal;
+  }
+
+  /* ---------- Shared sections ---------- */
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
   }
 
   .section {
-    padding: 60px 0;
-  }
-
-  .sectionTitle {
-    font-size: 28px;
+    padding: 36px 0;
   }
 
   .sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .sectionTitle {
+    font-size: clamp(22px, 4vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -0.7px;
+    margin-bottom: 8px;
+  }
+
+  .viewAll {
+    flex-shrink: 0;
+    padding: 5px 7px;
+    font-size: 10px;
+  }
+
+  /* ---------- Featured Projects: 3 cards per row ---------- */
+
+  .featuredGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .featuredCard {
+    min-width: 0;
+    height: 100%;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  .featuredThumb {
+    height: clamp(55px, 17vw, 100px);
+  }
+
+  .featuredFooter {
+    padding: 7px 6px;
+  }
+
+  .featuredTitle {
+    font-size: clamp(9px, 2.5vw, 12px);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  /* ---------- What I Do: 2 columns ---------- */
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .serviceCard {
+    min-width: 0;
+    padding: 14px 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  .serviceIconWrapper {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 10px;
+  }
+
+  .serviceIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .serviceTitle {
+    font-size: 13px;
+    line-height: 1.35;
+    margin-bottom: 6px;
+    overflow-wrap: anywhere;
+  }
+
+  .serviceDescription {
+    font-size: 11px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  /* ---------- Technical Skills: compact wrapping ---------- */
+
+  .skillsGrid {
+    display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
+    gap: 6px;
+  }
+
+  .skillCard {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+    max-width: 100%;
+    padding: 6px 7px;
+    font-size: 11px;
+    line-height: 1.3;
+    border-radius: 7px;
+    box-sizing: border-box;
+  }
+
+  .skillIcon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .skillCard svg {
+    flex-shrink: 0;
+  }
+
+  /* ---------- Experience: 4 cards per row ---------- */
+
+  .timelineContainer {
+    padding-top: 5px;
+  }
+
+  .timelineLine {
+    display: block;
+    left: 6px;
+    right: 6px;
+    top: 12px;
   }
 
   .timelineGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .timelineItem {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .timelinePoint {
+    width: 10px;
+    height: 10px;
+    margin-left: 3px;
+    border-width: 2px;
+  }
+
+  .timelineCard {
+    width: 100%;
+    height: 150px;
+    min-height: 0;
+    padding: 7px 5px;
+    gap: 5px;
+    border-radius: 7px;
+    box-sizing: border-box;
+  }
+
+  .companyLogo {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 4px;
+    border-radius: 5px;
+  }
+
+  .cardDetails {
+    min-width: 0;
+    gap: 3px;
+  }
+
+  .companyName {
+    font-size: clamp(8px, 2vw, 10px);
+    line-height: 1.3;
+  }
+
+  .companyRole {
+    font-size: clamp(7px, 1.8vw, 9px);
+    line-height: 1.3;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  /* ---------- CTA: wide and less tall ---------- */
+
+  .ctaSection {
+    padding: 28px 0 40px;
   }
 
   .ctaCard {
-    padding: 32px 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 18px 14px;
+    border-radius: 14px;
+    box-sizing: border-box;
+  }
+
+  .ctaLeft {
+    flex-shrink: 0;
+  }
+
+  .ctaIcon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .ctaCenter {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ctaSubtitle {
+    font-size: 12px;
+    line-height: 1.3;
+    margin-bottom: 5px;
   }
 
   .ctaTitle {
-    font-size: 28px;
+    font-size: clamp(16px, 3.5vw, 22px);
+    line-height: 1.2;
+    margin-bottom: 6px;
+    overflow-wrap: anywhere;
+  }
+
+  .ctaDescription {
+    font-size: 12px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .ctaRight {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ctaButton {
+    width: auto;
+    max-width: 125px;
+    padding: 9px 10px;
+    font-size: 12px;
+    white-space: normal;
   }
 }
 
@@ -1024,24 +1334,34 @@
    ========================================================================== */
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
+  /* Hero */
 
   .heroContainer {
-    padding: 0 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .profileArea {
+    height: 230px;
+  }
+
+  .profileRing {
+    width: 200px;
+    height: 200px;
   }
 
   .heroTitle {
-    font-size: 36px;
-  }
-
-  .heroGreeting {
-    font-size: 24px;
+    font-size: 34px;
   }
 
   .heroButtons {
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .button {
+    flex-basis: 125px;
+    padding: 11px 10px;
+    font-size: 13px;
   }
 
   .socialAndAvailabilityWrapper {
@@ -1050,49 +1370,227 @@
   }
 
   .inlineAvailabilityBadge {
-    font-size: 18px;
+    font-size: 12px;
+  }
+
+  /* Shared sections */
+
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .section {
+    padding: 30px 0;
   }
 
   .sectionHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 32px;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .sectionTitle {
+    font-size: 22px;
+  }
+
+  .viewAll {
+    padding: 5px 6px;
+    font-size: 9px;
+  }
+
+  /* Projects: retain 3 columns */
+
+  .featuredGrid {
+    gap: 6px;
   }
 
   .featuredThumb {
-    height: 190px;
+    height: clamp(48px, 16vw, 76px);
+  }
+
+  .featuredFooter {
+    padding: 6px 4px;
+  }
+
+  .featuredTitle {
+    font-size: 9px;
+  }
+
+  /* Services: retain 2 columns */
+
+  .servicesGrid {
+    gap: 8px;
+  }
+
+  .serviceCard {
+    padding: 12px 8px;
+  }
+
+  .serviceIconWrapper {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 8px;
+  }
+
+  .serviceIcon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .serviceTitle {
+    font-size: 12px;
+  }
+
+  .serviceDescription {
+    font-size: 10px;
+  }
+
+  /* Skills */
+
+  .skillsGrid {
+    gap: 5px;
   }
 
   .skillCard {
-    font-size: 18px;
+    gap: 4px;
+    padding: 5px 6px;
+    font-size: 10px;
+  }
+
+  .skillIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Experience: retain 4 columns */
+
+  .timelineGrid {
+    gap: 5px;
   }
 
   .timelineCard {
-    height: auto;
-    min-height: 220px;
+    height: 135px;
+    padding: 6px 4px;
   }
 
+  .companyLogo {
+    width: 25px;
+    height: 25px;
+  }
+
+  .companyName {
+    font-size: 8px;
+  }
+
+  .companyRole {
+    font-size: 7px;
+  }
+
+  /* CTA: maximize usable width */
+
   .ctaSection {
-    padding-bottom: 60px;
+    padding: 24px 0 32px;
+  }
+
+  .ctaCard {
+    gap: 8px;
+    padding: 14px 9px;
   }
 
   .ctaIcon {
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .ctaSubtitle {
+    font-size: 10px;
   }
 
   .ctaTitle {
-    font-size: 24px;
+    font-size: 15px;
   }
 
   .ctaDescription {
-    font-size: 16px;
+    font-size: 10px;
+  }
+
+  .ctaRight {
+    gap: 5px;
   }
 
   .ctaButton {
-    width: 100%;
-    font-size: 20px;
+    max-width: 90px;
+    padding: 7px 6px;
+    font-size: 10px;
   }
 }
 
+
+/* ==========================================================================
+   Very Narrow Screens
+   ========================================================================== */
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .viewAll {
+    font-size: 8px;
+    padding: 4px 5px;
+  }
+
+  .featuredTitle {
+    font-size: 8px;
+  }
+
+  .serviceTitle {
+    font-size: 11px;
+  }
+
+  .serviceDescription {
+    font-size: 9px;
+  }
+
+  .timelineCard {
+    height: 125px;
+    padding: 5px 3px;
+  }
+
+  .companyName {
+    font-size: 7px;
+  }
+
+  .companyRole {
+    font-size: 6px;
+  }
+
+  .ctaCard {
+    gap: 6px;
+    padding: 12px 7px;
+  }
+
+  .ctaIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .ctaTitle {
+    font-size: 14px;
+  }
+
+  .ctaRight {
+    max-width: 76px;
+  }
+
+  .ctaButton {
+    max-width: 76px;
+    padding: 6px 4px;
+    font-size: 9px;
+  }
+}
