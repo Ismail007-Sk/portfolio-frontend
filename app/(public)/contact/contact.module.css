@@ -697,6 +697,250 @@
 }
 
 
+/* Laptop Responsive */
+@media (min-width: 1025px) and (max-width: 1536px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Hero */
+  .heroContainer {
+    padding: 20px 100px 30px;
+  }
+
+  .heroGrid {
+    gap: clamp(30px, 4vw, 55px);
+  }
+
+  .heroLeft {
+    min-width: 0;
+    gap: 20px;
+  }
+
+  .heroLabel {
+    font-size: clamp(16px, 1.4vw, 20px);
+  }
+
+  .heroTitle {
+    font-size: clamp(38px, 3.5vw, 52px);
+  }
+
+  .heroDescription {
+    font-size: clamp(16px, 1.35vw, 19px);
+  }
+
+  .heroButtons {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .button {
+    font-size: 16px;
+  }
+
+  .statusBadge {
+    font-size: 15px;
+  }
+
+  .heroRight {
+    min-width: 0;
+  }
+
+  .heroVisualArea {
+    width: 100%;
+    max-width: 400px;
+    height: 360px;
+  }
+
+  .heroImage {
+    width: 900px;
+    height: 600px;
+    transform: translate(-95px, -20px);
+  }
+
+  .heroGlow {
+    width: 300px;
+    height: 300px;
+  }
+
+  .heroRightText {
+    top: -55px;
+    left: 280px;
+    width: 260px;
+    font-size: 25px;
+  }
+
+  .heroArrow {
+    top: 0;
+    right: -5px;
+    width: 220px;
+    height: 85px;
+  }
+
+  /* Contact Information */
+  .contactSection {
+    padding: 36px 24px;
+  }
+
+  .contactCard {
+    padding: 32px;
+  }
+
+  .contactHeader {
+    gap: 16px;
+  }
+
+  .contactIcon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .contactTitle {
+    font-size: 29px;
+  }
+
+  .contactDescription {
+    font-size: 17px;
+  }
+
+  .contactRows {
+    gap: 12px;
+  }
+
+  .contactRow {
+    padding: 16px 14px;
+    gap: 12px;
+  }
+
+  .contactBrandIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .rowIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .rowContent {
+    min-width: 0;
+  }
+
+  .rowLabel {
+    font-size: 17px;
+  }
+
+  .rowValue {
+    font-size: 15px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .rowAction {
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .contactDisplay {
+    min-width: 0;
+  }
+
+  .contactSubtext {
+    font-size: 13px;
+  }
+
+  /* Availability */
+  .availabilitySection {
+    padding: 36px 24px;
+  }
+
+  .availabilityCard {
+    padding: 30px;
+    gap: 24px;
+  }
+
+  .availabilityLeft {
+    min-width: 0;
+    gap: 16px;
+  }
+
+  .availabilityIcon {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+  }
+
+  .availabilityPrefix {
+    font-size: 17px;
+  }
+
+  .availabilityTitle {
+    font-size: 28px;
+  }
+
+  .availabilityDescription {
+    font-size: 16px;
+  }
+
+  .availabilityRight {
+    flex-shrink: 0;
+  }
+
+  .availabilityTag {
+    font-size: 14px;
+  }
+
+  /* CTA */
+  .ctaSection {
+    padding: 36px 24px 44px;
+  }
+
+  .ctaCard {
+    padding: 30px;
+    gap: 24px;
+  }
+
+  .ctaLeft {
+    min-width: 0;
+    gap: 16px;
+  }
+
+  .ctaIcon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  .ctaTitle {
+    font-size: 25px;
+  }
+
+  .ctaDescription {
+    font-size: 16px;
+  }
+
+  .ctaRight {
+    flex-shrink: 0;
+  }
+
+  .ctaBrandIcon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .ctaRight a.buttonPrimary {
+    max-width: 180px;
+    min-height: 42px;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+
+
+
+
 /* =========================================================
    Responsive Design — Tablet
    ========================================================= */

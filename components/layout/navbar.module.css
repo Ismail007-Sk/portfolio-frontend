@@ -122,9 +122,31 @@
 /* =========================
    Responsive
 ========================= */
+/* =========================
+   Laptop Responsive
+========================= */
+
+@media (min-width: 1025px) and (max-width: 1536px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .logo {
+    font-size: 32px;
+  }
+
+  .navLinks {
+    gap: 28px;
+  }
+
+  .navLink {
+    font-size: 18px;
+  }
+}
+
 
 /* Tablets and smaller laptops */
-@media (max-width: 1024px) {
+@media (max-width: 1024px)  {
   .navLinks {
     gap: 16px;
   }

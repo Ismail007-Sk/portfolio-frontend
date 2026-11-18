@@ -899,9 +899,247 @@
 
 
 /* ==========================================================================
-   Responsive — Tablet
+   Responsive — Laptop (1025px–1536px)
    ========================================================================== */
 
+@media (min-width: 1025px) and (max-width: 1536px) {
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: 80px 100px 60px;
+  }
+
+  .heroContainer {
+    padding: 0 32px;
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 50px;
+    transform: translateX(-20px);
+  }
+
+  .heroGreeting {
+    font-size: 24px;
+  }
+
+  .heroTitle {
+    font-size: clamp(46px, 4.5vw, 60px);
+  }
+
+  .heroSubtitle {
+    font-size: 24px;
+  }
+
+  .heroDescription {
+    font-size: 19px;
+  }
+
+  .heroButtons {
+    gap: 12px;
+  }
+
+  .button {
+    padding: 11px 18px;
+    font-size: 17px;
+  }
+
+  /* ---------- Hero Right / Portrait ---------- */
+
+  .heroRight {
+    min-width: 0;
+  }
+
+  .profileArea {
+    width: 340px;
+    height: 340px;
+  }
+
+  .profileRing {
+    width: 300px;
+    height: 300px;
+    transform: translate(-43%, -40%);
+  }
+
+  .heroPortrait {
+    width: 900px;       /* Controls image width */
+    height: 600px;       /* Maintains aspect ratio */
+    transform: translate(10px, -20px);
+  }
+
+  /* ---------- Social Links & Availability ---------- */
+
+  .socialAndAvailabilityWrapper {
+    gap: 12px;
+  }
+
+  .socialLink {
+    width: 42px;
+    height: 42px;
+  }
+
+  .inlineAvailabilityBadge {
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  /* ---------- Shared Sections ---------- */
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 36px;
+  }
+
+  .sectionTitle {
+    font-size: 42px;
+  }
+
+  .viewAll {
+    font-size: 16px;
+  }
+
+  /* ---------- Featured Projects ---------- */
+
+  .featuredGrid {
+    gap: 18px;
+  }
+
+  .featuredThumb {
+    height: 180px;
+  }
+
+  .featuredFooter {
+    padding: 14px 16px;
+  }
+
+  .featuredTitle {
+    font-size: 18px;
+  }
+
+  /* ---------- Services ---------- */
+
+  .servicesGrid {
+    gap: 18px;
+  }
+
+  .serviceCard {
+    padding: 24px 18px;
+  }
+
+  .serviceIconWrapper {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+
+  .serviceIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .serviceTitle {
+    font-size: 19px;
+  }
+
+  .serviceDescription {
+    font-size: 16px;
+  }
+
+  /* ---------- Skills ---------- */
+
+  .skillsGrid {
+    gap: 12px;
+  }
+
+  .skillCard {
+    gap: 8px;
+    padding: 10px 16px;
+    font-size: 17px;
+  }
+
+  .skillIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* ---------- Experience Timeline ---------- */
+
+  .timelineGrid {
+    gap: 16px;
+  }
+
+  .timelineItem {
+    gap: 16px;
+  }
+
+  .timelineCard {
+    height: 230px;
+    padding: 16px;
+  }
+
+  .companyLogo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .companyName {
+    font-size: 17px;
+  }
+
+  .companyRole {
+    font-size: 15px;
+  }
+
+  /* ---------- Final CTA ---------- */
+
+  .ctaSection {
+    padding: 50px 0 75px;
+  }
+
+  .ctaCard {
+    gap: 24px;
+    padding: 32px;
+  }
+
+  .ctaIcon {
+    width: 65px;
+    height: 65px;
+  }
+
+  .ctaSubtitle {
+    font-size: 18px;
+  }
+
+  .ctaTitle {
+    font-size: 26px;
+  }
+
+  .ctaDescription {
+    font-size: 17px;
+  }
+
+  .ctaRight {
+    gap: 12px;
+  }
+
+  .ctaButton {
+    padding: 11px 22px;
+    font-size: 20px;
+  }
+}
+
+
+
+
+/* ==========================================================================
+   Responsive — Tablet
+   ========================================================================== */
+  
 @media (max-width: 1024px) {
   .heroGrid {
     grid-template-columns: 1fr;

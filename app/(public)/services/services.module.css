@@ -635,6 +635,241 @@
   color: #8b5cf6;
 }
 
+
+/* ==========================================================================
+   Responsive Design — Laptop (1025px–1536px)
+   ========================================================================== */
+
+@media (min-width: 1025px) and (max-width: 1536px) {
+
+  /* ---------- Hero Section ---------- */
+
+  .hero {
+    padding: 80px 100px 60px;
+  }
+
+  .heroContainer {
+    padding: 0 32px;
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 50px;
+    transform: translateX(-20px);
+  }
+
+  .heroLeft {
+    gap: 20px;
+    min-width: 0;
+  }
+
+  .heroTitle {
+    font-size: clamp(46px, 4.5vw, 60px);
+  }
+
+  .heroDescription {
+    font-size: 19px;
+    line-height: 1.5;
+  }
+
+  .heroButton {
+    padding: 11px 22px;
+    font-size: 14px;
+  }
+
+  /* ---------- Hero Illustration ---------- */
+
+  .heroRight {
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .heroVisual {
+    width: 380px;
+    height: 380px;
+    max-width: 100%;
+  }
+
+  .heroGlow {
+    width: 320px;
+    height: 320px;
+    transform: translate(-50%, -50%);
+  }
+
+  .heroImage {
+    width: 900px;
+    height: 600px;
+    transform: translate(20px, -20px);
+  }
+
+  .heroGridBg {
+    background-size: 35px 35px;
+  }
+
+  /* ---------- Core & Other Services Sections ---------- */
+
+  .coreServicesSection,
+  .otherServicesSection {
+    padding: 50px 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 38px;
+  }
+
+  .sectionLabel {
+    font-size: 25px;
+    margin-bottom: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 29px;
+  }
+
+  .sectionDescription {
+    font-size: 19px;
+  }
+
+  /* ---------- Core Services Grid ---------- */
+
+  .serviceContainer {
+    max-width: 1300px;
+    padding: 0 24px;
+  }
+
+  .coreServicesGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .coreServiceCard {
+    min-width: 0;
+    padding: 22px 18px;
+  }
+
+  .serviceIcon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+
+  .serviceTitle {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .serviceDescription {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .featureList {
+    margin-bottom: 16px;
+  }
+
+  .featureItem {
+    gap: 7px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .learnMore {
+    font-size: 13px;
+  }
+
+  /* ---------- Freelance Services ---------- */
+
+  .freelanceCard {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 32px;
+    padding: 36px;
+  }
+
+  .topBar {
+    margin-bottom: 20px;
+  }
+
+  .freelanceTitle {
+    font-size: 26px;
+  }
+
+  .freelanceDescription {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .freelanceList {
+    gap: 14px;
+  }
+
+  .freelanceItem {
+    gap: 12px;
+    padding-bottom: 14px;
+  }
+
+  .freelanceItemTitle {
+    font-size: 18px;
+  }
+
+  .freelanceItemDescription {
+    font-size: 13px;
+  }
+
+  /* ---------- CTA Section ---------- */
+
+  .ctaSection {
+    padding: 50px 0 75px;
+  }
+
+  .ctaCard {
+    gap: 28px;
+    padding: 32px;
+  }
+
+  .ctaIcon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .ctaSubtitle {
+    font-size: 18px;
+  }
+
+  .ctaTitle {
+    font-size: 26px;
+  }
+
+  .ctaDescription {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .ctaRight {
+    gap: 12px;
+  }
+
+  .ctaButton {
+    padding: 11px 22px;
+    font-size: 20px;
+  }
+
+  .socialIcons {
+    gap: 10px;
+  }
+
+  .socialIcon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+
+
+
 /* ==========================================================================
    Responsive Design — Tablet
    ========================================================================== */

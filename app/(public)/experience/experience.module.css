@@ -597,6 +597,297 @@
    RESPONSIVE DESIGN
    ============================ */
 
+/* ==========================================================================
+   Responsive Design — Laptop (1025px–1536px)
+   ========================================================================== */
+
+@media (min-width: 1025px) and (max-width: 1536px) {
+
+  /* ---------- Hero Section ---------- */
+
+  .hero {
+    padding: 90px 100px 65px;
+  }
+
+  .heroContainer {
+    padding: 0 32px;
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 60px;
+    transform: translateX(-30px);
+  }
+
+  .heroLeft {
+    gap: 20px;
+    min-width: 0;
+  }
+
+  .heroTitle {
+    font-size: clamp(46px, 4.5vw, 60px);
+  }
+
+  .heroDescription {
+    font-size: 19px;
+    line-height: 1.5;
+  }
+
+  .heroRight {
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .heroVisual {
+    width: 380px;
+    height: 380px;
+    max-width: 100%;
+  }
+
+  .heroGlow {
+    width: 320px;
+    height: 320px;
+    transform: translate(-50%, -50%);
+  }
+
+  .heroImage {
+    width: 900px;
+    height: 600px;
+    transform: translate(40px, -20px);
+  }
+
+  /* ---------- Timeline Section ---------- */
+
+  .timelineSection,
+  .gainedSection {
+    padding: 50px 0;
+  }
+
+  .sectionHeader {
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .sectionIcon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .sectionTitle {
+    font-size: 30px;
+  }
+
+  .timelineGrid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .timelineLeftWrapper,
+  .timelineLeft {
+    max-height: 800px;
+    min-width: 0;
+  }
+
+  .timelineLeft {
+    padding-right: 8px;
+    padding-left: 7px;
+  }
+
+  .timelineEntry {
+    gap: 12px;
+  }
+
+  .timelineMarker {
+    width: 17px;
+    height: 17px;
+    margin-top: 17px;
+  }
+
+  .timelineCard {
+    min-width: 0;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .timelineCardHeader {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .companyLogo {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+  }
+
+  .companyName {
+    font-size: 19px;
+    line-height: 1.35;
+  }
+
+  .categoryBadge {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  .timelineCardFooter {
+    gap: 12px;
+    padding-top: 10px;
+  }
+
+  .timelineMeta {
+    font-size: 14px;
+    gap: 5px;
+  }
+
+  /* ---------- Experience Details ---------- */
+
+  .timelineRight {
+    position: sticky;
+    top: 20px;
+    min-width: 0;
+  }
+
+  .detailsCard {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .detailsHeader {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .detailsTitle {
+    font-size: 24px;
+  }
+
+  .detailsMeta {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .detailsMetaItem {
+    gap: 6px;
+    font-size: 15px;
+  }
+
+  .detailsSection {
+    margin-bottom: 20px;
+  }
+
+  .detailsSectionHeader {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .detailsSectionTitle {
+    font-size: 20px;
+  }
+
+  .detailsSectionText {
+    font-size: 17px;
+  }
+
+  .detailsSectionDescription,
+  .responsibilityItem {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .responsibilityItem {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .techTag {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .technologyTags {
+    gap: 7px;
+  }
+
+  .detailsDividerLine {
+    height: 4px;
+    margin: 16px 0;
+  }
+
+  /* ---------- Benefits Section ---------- */
+
+  .benefitsGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .benefitCard {
+    min-width: 0;
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .benefitIcon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+
+  .benefitTitle {
+    font-size: 19px;
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+
+  .benefitDescription {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* ---------- CTA Section ---------- */
+
+  .ctaSection {
+    padding: 50px 0 75px;
+  }
+
+  .ctaCard {
+    gap: 28px;
+    padding: 32px;
+    border-radius: 18px;
+  }
+
+  .ctaIcon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .ctaCenter {
+    min-width: 0;
+  }
+
+  .ctaSubtitle {
+    font-size: 18px;
+  }
+
+  .ctaTitle {
+    font-size: 26px;
+  }
+
+  .ctaRight {
+    gap: 12px;
+  }
+
+  .ctaButton {
+    padding: 11px 20px;
+    font-size: 20px;
+  }
+}
+
+
+
+
 /* Tablets and smaller desktops */
 @media (max-width: 1024px) {
   /* Hero */
